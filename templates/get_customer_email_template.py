@@ -1,8 +1,53 @@
+from templates.get_email_footer import get_email_footer
+
+
 def get_customer_email_template(customer_name: str) -> str:
     return f"""
-        <h2>¡Hola, {customer_name}! Hemos recibido tu solicitud 🎉</h2>
-        <p>Muchas gracias por contactarnos y por confiar en nosotros para tu próximo tatuaje. Nos alegra mucho tenerte aquí.</p>
-        <p>En breve, alguien de nuestro equipo se pondrá en contacto contigo personalmente para conocer más detalles sobre tu idea, coordinar la cita y asegurarse de que todo quede exactamente como lo imaginas.</p>
-        <p>Mientras tanto, si tienes alguna pregunta o quieres compartir más referencias, no dudes en respondernos este correo.</p>
-        <p>¡Nos vemos pronto! 🖤<br/>El equipo de Stiven Tatu</p>
+    <table width="100%" cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif;">
+        <tr>
+            <td align="center">
+                <table width="420" cellpadding="0" cellspacing="0">
+
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" style="padding: 24px 0;">
+                            <p style="margin: 0; font-size: 20px; font-weight: bold; color: #111;">
+                                ¡Hola, {customer_name}! 🖤
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td align="center">
+                            <div style="width: 40px; height: 2px; background-color: #111; margin: 12px 0;"></div>
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 12px 0; color: #555; font-size: 14px; line-height: 1.6;">
+                            
+                            <p>
+                                Hemos recibido tu solicitud y estamos muy emocionados de trabajar contigo ✨
+                            </p>
+
+                            <p>
+                                En breve, alguien de nuestro equipo te contactará para definir todos los detalles
+                                y asegurarnos de que tu tatuaje quede exactamente como lo imaginas.
+                            </p>
+
+                            <p style="margin-top: 16px;">
+                                Nos vemos pronto,<br/>
+                                <strong>Stiven Tatu</strong>
+                            </p>
+
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+    {get_email_footer()}
     """

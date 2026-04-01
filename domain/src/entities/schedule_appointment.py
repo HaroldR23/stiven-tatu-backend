@@ -16,5 +16,6 @@ class ScheduleAppointment:
 
 	allergies: str
 	preferred_date: str
+	preferred_time: str
 	is_over_18: bool
 	accepts_privacy: bool
